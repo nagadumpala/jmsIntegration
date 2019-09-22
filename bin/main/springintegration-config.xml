@@ -19,7 +19,7 @@
 
 	<int-jms:outbound-channel-adapter
 		id="jmsSendAdapter" channel="outSendChannel"
-		connection-factory="connectionFactory" destination="sendQueue"
+		connection-factory="activeMQconnectionFactory" destination="sendQueue"
 		delivery-persistent="true" pub-sub-domain="${systemProperties['spring.activemq.topic'] ? true : false}"
 		session-transacted="true"></int-jms:outbound-channel-adapter>
 	<integration:channel id="inRecvChannel">

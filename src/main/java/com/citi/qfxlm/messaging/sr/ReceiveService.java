@@ -12,9 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ReceiveService  {
 	public Object processMsg(Message<?> msg) {
-	
-		System.out.println("received " + (String)msg.getPayload());
-
 		return msg.getPayload();
 	}
 

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public   class MessageReceiverService  {
+public class MessageReceiverService  {
 
 	   @Autowired
 	    private ApplicationContext context;

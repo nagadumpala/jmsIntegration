@@ -15,7 +15,7 @@
     </bean>
 
     <!-- ConnectionFactory Definition -->
-    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+    <bean id="activeMQconnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
         <constructor-arg ref="amqConnectionFactory" />
         <property name="sessionCacheSize" value="10"/>
 		<property name="cacheConsumers" value="false"/>
@@ -34,7 +34,7 @@
     </bean>
     
     <bean id="messageListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="connectionFactory" ref="activeMQconnectionFactory"/>
         <property name="destination" ref="receiveQueue"/>
         <property name="sessionTransacted" value="true"/>
         <property name="maxConcurrentConsumers" value="1"/>
